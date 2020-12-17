@@ -1,0 +1,58 @@
+<!-- Pour rattacher de formulaire on utilise la propriété form group pour qu'il puisse interprété la variable définit du côté typeScript au nom de reservation Form (lier le code typescript au code html)-->
+<!-- Pour rattacher ce champ côté template on utilise formContralName-->
+
+<!-- 
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Choisir une date" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker startView="year" [startAt]="date"></mat-datepicker>
+    </mat-form-field>
+ -->
+<div *ngIf="!isScheduleOk">
+    <form [formGroup]="reservationForm" (submit)="saveReservation()"> 
+    
+        <input type="date" formControlName="date">
+       
+        <mat-form-field>
+            <mat-select formControlName="time" placeholder="Heure">
+              <mat-option *ngFor="let to of timeOptions" [value]="to" >
+                  {{ to }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+          <mat-form-field>
+            <mat-select formControlName="people" placeholder="Combien de personnes ?">
+              <mat-option *ngFor="let po of peopleOptions" [value]="po" >
+                  {{ po }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-button type="submit">Confirmer l'horaire</button>
+    </form>
+</div>
+
+{{ reservationForm.value | json }}
+
+<div *ngIf="isScheduleOk">
+    <!-- Template driven form -->
+    <form #f="ngForm" (submit)="finalizeReservation(f.value)">
+        <mat-form-field>
+            <input matInput type="text" name="firstName" placeholder="Prénom" [(ngModel)]="client.firstName">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="text" name="lastName" placeholder="Nom" [(ngModel)]="client.lastName">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="email" name="email" placeholder="email" [(ngModel)]="client.email">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput type="number" name="phone" placeholder="Téléphone" [(ngModel)]="client.phone">
+        </mat-form-field>
+
+        <button mat-button type="submit">Réserver</button>
+        {{ f.controls.firstName?.value }}
+    </form>
+</div>
+
