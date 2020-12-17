@@ -15,20 +15,11 @@ export class MainDashComponent implements OnInit {
   
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'A la carte', cols: 2, rows: 1 },
-          { title: 'Burger', cols: 2, rows: 1 },
-          { title: 'Galettes/crêpes', cols: 2, rows: 2 },
-          { title: 'Pizza', cols: 2, rows: 1 }
-        ];
-      }
-
+    
       return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 2, rows: 1 },
-        { title: 'Card 3', cols: 2, rows: 2 },
-        { title: 'Card 4', cols: 2, rows: 1 }
+          { title: 'Burger', cols: 2, rows: 1, id: 'brg' },
+          { title: 'Galettes/crêpes', cols: 2, rows: 2, id: 'glt' },
+          { title: 'Pizza', cols: 2, rows: 1, id: 'pzz' }
       ];
     })
   );
