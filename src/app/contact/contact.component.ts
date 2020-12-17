@@ -36,4 +36,7 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  displayBig(telNumber){
+    console.log(telNumber);
+  }
 }
