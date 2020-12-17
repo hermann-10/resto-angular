@@ -18,7 +18,7 @@ export class MainDashComponent implements OnInit {
     
       return [
           { title: 'Burger', cols: 2, rows: 1, id: 'brg' },
-          { title: 'Galettes/crêpes', cols: 2, rows: 2, id: 'glt' },
+          { title: 'Galettes/crêpes', cols: 2, rows: 1, id: 'glt' },
           { title: 'Pizza', cols: 2, rows: 1, id: 'pzz' }
       ];
     })

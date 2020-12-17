@@ -11,7 +11,7 @@ export class QuickLunchService {
   burgers: Food[] = [
     { id: 1, title: "Hamburger", description: 'steak, tomate, salade iceberg, oigons rouges, sauce maison', price:6.40 },
     { id: 2, title: "Cheeseburger", description: 'steak, cheddar, tomate, salade iceberg, oignons rouges, sauce maison', price: 7.00 },
-    { id: 3, title: "Burger du moment", price: 7.00 }
+    { id: 3, title: "Burger du moment", description: 'entrecôte, fromage, tomate, salade iceberg, oignons, sauce maison', price: 10.00 }
   ];
 
   pizzas: Food[] = [
@@ -22,8 +22,11 @@ export class QuickLunchService {
   ];
 
   galettes: Food[] = [
-    {id: 1, title: 'Formule complète', description: 'galette complète, crêpe beurre sucre, bolée de cidre fermier', price: 9.90},
-    {id: 2, title: 'Formule du jour', description: 'galette du jour, crêpe du jour, bolée de cidre', price: 9.30}
+    {id: 1, title: 'Formule complète', description: 'galette complète, crêpe beurre sucre, bolée de cidre fermier', price: 7.90},
+    {id: 2, title: 'Formule du jour', description: 'galette du jour, crêpe du jour (sucré ou salé), bolée de cidre', price: 11.30},
+    {id: 3, title: 'Formule du soir', description: 'galette complète, crêpe + viande sucre, bolée de cidre fermier', price: 9.90},
+    {id: 4, title: 'Formule pour enfant', description: 'galette pour enfant + (sucré ou salé) + dessert + boisson + jeu', price: 12.50}
+  
   ];
 
   getBurgers(): Food[]{
@@ -35,6 +38,6 @@ export class QuickLunchService {
   }
 
   getGalettes(): Food[]{
-    return this.pizzas;
+    return this.galettes;
   }
 }

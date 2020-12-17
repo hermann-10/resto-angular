@@ -12,7 +12,7 @@
     <form [formGroup]="reservationForm" (submit)="saveReservation()"> 
     
         <input type="date" formControlName="date">
-       
+        
         <mat-form-field>
             <mat-select formControlName="time" placeholder="Heure">
               <mat-option *ngFor="let to of timeOptions" [value]="to" >
@@ -30,7 +30,6 @@
     </form>
 </div>
 
-{{ reservationForm.value | json }}
 
 <div *ngIf="isScheduleOk">
     <!-- Template driven form -->
@@ -52,7 +51,6 @@
         </mat-form-field>
 
         <button mat-button type="submit">Réserver</button>
-        {{ f.controls.firstName?.value }}
     </form>
 </div>
 

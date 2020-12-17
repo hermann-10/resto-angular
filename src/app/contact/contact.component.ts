@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
   
+  numberToDisplay = '';
   standard = { 
     firstName: 'Benjamin',
     lastName: 'Mendes',
@@ -38,5 +39,6 @@ export class ContactComponent implements OnInit {
 
   displayBig(telNumber){
     console.log(telNumber);
+    this.numberToDisplay = telNumber;
   }
 }

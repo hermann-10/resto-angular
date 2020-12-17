@@ -1,12 +1,6 @@
 {
     "version": "1.0.0",
-    "events": [
-      {
-        "id": 0,
-        "title": "test",
-        "date": "24/05/2018",
-        "description": "ceci est un gros test"
-      },      
+    "events": [    
       {
         "id": 1,
         "title": "soirée foot",
