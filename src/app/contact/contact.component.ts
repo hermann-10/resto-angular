@@ -27,7 +27,7 @@ export class ContactComponent implements OnInit {
     firstName: 'Raul',
     lastName: 'Gutierrez',
     role: 'Boucher',
-    award: 'Meilleur boucher',
+    award: 'Meilleur boucher en 2015',
     phoneNumber: '07998765542'
   };
 
